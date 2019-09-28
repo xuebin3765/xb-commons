@@ -1,6 +1,7 @@
 package com.xb.commons.validator;
 
 import com.google.common.collect.Lists;
+import com.xb.commons.validator.annotation.NotNull;
 import lombok.Data;
 import org.apache.commons.lang3.reflect.FieldUtils;
 
@@ -35,6 +36,11 @@ public class Validator {
         Field[] fields = FieldUtils.getAllFields(clazz);
         if (fields.length == 0) return validResult;
         for (Field field: fields) {
+            // 是否存在NotNull注解
+            if (field.isAnnotationPresent(NotNull.class)){
+
+            }
+
             Annotation[] annotations = field.getAnnotations();
             if (annotations != null && annotations.length > 0){
                 for (Annotation annotation: annotations) {
