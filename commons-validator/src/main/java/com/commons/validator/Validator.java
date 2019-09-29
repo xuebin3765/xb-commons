@@ -382,9 +382,10 @@ public class Validator {
             return String.join(", ", errors);
         }
 
-        public boolean hasErrors(){
-            return errorMsgs != null && errorMsgs.size() > 0;
+        public boolean isHasErrors() {
+            return this.errorMsgs != null && this.errorMsgs.size() > 0;
         }
+
     }
 
     @Data
