@@ -118,6 +118,15 @@ public class Validator {
             }
         }
 
+        // 验证字符串长度
+        if (field.isAnnotationPresent(Email.class)){
+            Email email = field.getAnnotation(Email.class);
+            String message = validate(fieldName, fieldValue, email);
+            if (StringUtils.isNotBlank(message)){
+                return message;
+            }
+        }
+
         return null;
     }
 
@@ -260,6 +269,18 @@ public class Validator {
             message = null;
         }
         return message;
+    }
+
+    /**
+     * 对某个值进行某类注解的验证
+     * @param object 参数值
+     * @param email 长度注解
+     * @return 错误信息
+     */
+    private static String validate(String filedName, Object object, Email email) {
+        String emailStr = String.valueOf(object);
+        boolean isEmail = emailStr.matches("^[a-zA-Z0-9_-]+@[a-zA-Z0-9_-]+(\\.[a-zA-Z0-9_-]+)+$");
+        return isEmail ? null: StringUtils.isNotBlank(email.value())?email.value():"邮箱地址不合法";
     }
 
     /**
