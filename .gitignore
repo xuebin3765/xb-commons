@@ -26,4 +26,5 @@ hs_err_pid*
 .idea
 xb-commons.iml
 commons-validator/commons-validator.iml
+commons-validator/target
 
