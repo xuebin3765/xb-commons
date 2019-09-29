@@ -24,6 +24,11 @@
 
     <dependencies>
 
+        <dependency>
+            <groupId>com.fasterxml.jackson</groupId>
+            <artifactId>jackson</artifactId>
+            <version>1.7.6</version>
+        </dependency>
     </dependencies>
 
     <build>
