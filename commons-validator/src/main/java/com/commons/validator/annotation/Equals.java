@@ -1,10 +1,15 @@
-package com.xb.commons.validator.annotation;
+package com.commons.validator.annotation;
+
+import java.lang.annotation.*;
 
 /**
  * desc: 比较两个字段的值是否相等
  * author: xuebin3765@163.com
  * date: 2019/09/28
  */
+@Target({ElementType.FIELD, ElementType.METHOD})
+@Retention(RetentionPolicy.RUNTIME)
+@Documented
 public @interface Equals {
 
     /**
@@ -12,4 +17,6 @@ public @interface Equals {
      * @return 描述信息
      */
     public String message() default "";
+
+    public String value();
 }

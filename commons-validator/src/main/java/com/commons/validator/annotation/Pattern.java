@@ -1,10 +1,15 @@
-package com.xb.commons.validator.annotation;
+package com.commons.validator.annotation;
+
+import java.lang.annotation.*;
 
 /**
  * desc: 正则校验参数
  * author: xuebin3765@163.com
  * date: 2019/09/28
  */
+@Target({ElementType.FIELD, ElementType.METHOD})
+@Retention(RetentionPolicy.RUNTIME)
+@Documented
 public @interface Pattern {
 
     /**

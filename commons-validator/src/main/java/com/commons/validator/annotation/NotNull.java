@@ -1,4 +1,4 @@
-package com.xb.commons.validator.annotation;
+package com.commons.validator.annotation;
 
 import java.lang.annotation.*;
 
