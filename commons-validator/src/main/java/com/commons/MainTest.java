@@ -1,6 +1,7 @@
 package com.commons;
 
-import com.commons.validator.Validator;
+import com.commons.validator.ValidResult;
+import com.commons.validator.ValidatorFactory;
 import com.commons.test.UserDTO;
 
 /**
@@ -15,7 +16,7 @@ public class MainTest {
         userDTO.setPassword("123456");
         userDTO.setRePassword("123456sssss");
         userDTO.setAge(100);
-        Validator.ValidResult validResult = Validator.validBean(userDTO);
+        ValidResult validResult = ValidatorFactory.validBean(userDTO);
         System.out.println(validResult.getErrors());
     }
 }
